@@ -1,5 +1,8 @@
 package com.adriancalventos.demo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.modelmapper.ModelMapper;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -9,6 +12,7 @@ import org.springframework.context.annotation.Bean;
 
 import com.adriancalventos.demo.customer.entity.CustomerJpa;
 import com.adriancalventos.demo.customer.repository.CustomerRepositoryJpa;
+import com.adriancalventos.demo.product.entity.ProductJpa;
 
 
 
@@ -29,7 +33,10 @@ public class ClientAppApplication {
     public CommandLineRunner sampleData(CustomerRepositoryJpa repository) {
         return (args) -> {
         	
-        	 repository.save(new  CustomerJpa("nif1", "doc1", "mail@mail.com", "pepe"));
+        	CustomerJpa cus=new  CustomerJpa("nif1", "doc1", "mail@mail.com", "pepe");
+        	cus.addProduct(new ProductJpa("pomes"));
+        	cus.addProduct(new ProductJpa("taronjes"));
+        	 repository.save(cus);
         };
         	
        }

@@ -1,6 +1,7 @@
 package com.adriancalventos.demo.customer.controller;
 
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -27,7 +28,7 @@ public class CustomerController {
 	    }
 
 	    @GetMapping(value = "/customer/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-	    public CustomerDto getCustomer(@PathVariable Long id){
+	    public CustomerDto getCustomer(@PathVariable UUID id){
 	        return customerService.getCustomer(id);
 	    }
 	    

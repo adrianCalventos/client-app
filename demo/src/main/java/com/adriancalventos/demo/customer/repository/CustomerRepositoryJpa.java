@@ -11,9 +11,11 @@ import com.adriancalventos.demo.customer.entity.CustomerJpa;
 
 
 @Repository
-public interface CustomerRepositoryJpa extends CrudRepository<CustomerJpa, Long>{
+public interface CustomerRepositoryJpa extends CrudRepository<CustomerJpa, UUID>{
 	
 	List<CustomerJpa> findAll();
+
+	CustomerJpa save(CustomerJpa customerJpa);
 	
 
 

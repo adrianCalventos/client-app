@@ -33,7 +33,7 @@ public class CustomerService {
   	          .collect(Collectors.toList());
     }
     
-    public CustomerDto getCustomer(@PathVariable Long id){
+    public CustomerDto getCustomer(@PathVariable UUID id){
        return customerRepository.findById(id).map(this::convertToDto).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, String.format("Invalid Book id %s", id)));
     }
 	

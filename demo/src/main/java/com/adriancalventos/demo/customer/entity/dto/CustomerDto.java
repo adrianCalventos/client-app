@@ -1,6 +1,9 @@
 package com.adriancalventos.demo.customer.entity.dto;
 
+import java.util.List;
 import java.util.UUID;
+
+import com.adriancalventos.demo.product.entity.ProductJpa;
 
 
 
@@ -17,15 +20,18 @@ public class CustomerDto {
 	 	 
 	 private String givenName;
 	 
+	 List<ProductJpa> products;
+	 
 	 public CustomerDto() {}
 	 
 
-	public CustomerDto(UUID id, String nif, String docNum, String email, String givenName) {
+	public CustomerDto(UUID id, String nif, String docNum, String email, String givenName, List<ProductJpa> products) {
 		this.id = id;
 		this.nif = nif;
 		this.docNum = docNum;
 		this.email = email;
 		this.givenName = givenName;
+		this.products= products;
 	}
 
 	public UUID getId() {
@@ -67,7 +73,18 @@ public class CustomerDto {
 	public void setGivenName(String givenName) {
 		this.givenName = givenName;
 	}
+
+
+	public List<ProductJpa> getProducts() {
+		return products;
+	}
+
+
+	public void setProducts(List<ProductJpa> products) {
+		this.products = products;
+	}
 	 
+	
 	 
 
 
