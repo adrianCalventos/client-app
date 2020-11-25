@@ -33,10 +33,25 @@ public class ClientAppApplication {
     public CommandLineRunner sampleData(CustomerRepositoryJpa repository) {
         return (args) -> {
         	
-        	CustomerJpa cus=new  CustomerJpa("nif1", "doc1", "mail@mail.com", "pepe");
-        	cus.addProduct(new ProductJpa("pomes"));
-        	cus.addProduct(new ProductJpa("taronjes"));
-        	 repository.save(cus);
+        	List<CustomerJpa> cusList=new ArrayList<CustomerJpa>();
+        	CustomerJpa cus=new  CustomerJpa("1111111111A", "123344567", "pepe@mail.com", "pepe");
+        	cus.addProduct(new ProductJpa("linea fixe", "servei", "911111111"));
+        	cus.addProduct(new ProductJpa("fibra", "servei", null));
+        	cusList.add(cus);
+        	
+        	cus=new  CustomerJpa("1111111112A", "123344568", "Joseph@mail.com", "Joseph");
+        	cus.addProduct(new ProductJpa("linea fixe", "servei", "911111111"));
+        	cus.addProduct(new ProductJpa("20gb", "producte", null));
+        	cus.addProduct(new ProductJpa("roaming", "producte", null ));
+        	cus.addProduct(new ProductJpa("roaming", "producte", null ));
+        	cus.addProduct(new ProductJpa("movil", "servei", null));
+
+        	cusList.add(cus);
+        	cus=new  CustomerJpa("1111111113A", "123344569", "aaia@mail.com", "Laia");
+
+        	cusList.add(cus);
+        	
+        	 repository.saveAll(cusList);
         };
         	
        }

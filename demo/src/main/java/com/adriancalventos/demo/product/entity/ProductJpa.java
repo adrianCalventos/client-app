@@ -31,14 +31,23 @@ public class ProductJpa {
 	 @Column(name="productName", nullable=false)
 	 private String productName;
 	 
+	 @Column(name="productTypeName", nullable=false)
+	 private String productTypeName;
+	 
 	 @OneToOne
 	 @JoinColumn(name = "customer_id")
 	 private CustomerJpa customer;
 	 
+	 @Column(name="numeracioTerminal")
+	 private String numeracioTerminal;
+
+	 
 	 public  ProductJpa() {};
 
-	public ProductJpa(String productName) {
+	public ProductJpa(String productName, String productTypeName, String numeracioTerminal) {
 		this.productName = productName;
+		this.productTypeName=productTypeName;
+		this.numeracioTerminal= numeracioTerminal;
 	}
 
 	public UUID getId() {
@@ -64,6 +73,26 @@ public class ProductJpa {
 	public void setCustomer(CustomerJpa customerId) {
 		this.customer = customerId;
 	}
+
+	public String getProductTypeName() {
+		return productTypeName;
+	}
+
+	public void setProductTypeName(String productTypeName) {
+		this.productTypeName = productTypeName;
+	}
+
+	public String getNumeracioTerminal() {
+		return numeracioTerminal;
+	}
+
+	public void setNumeracioTerminal(String numeracioTerminal) {
+		this.numeracioTerminal = numeracioTerminal;
+	}
+	
+	
+	
+	
 	 
 	 
 
