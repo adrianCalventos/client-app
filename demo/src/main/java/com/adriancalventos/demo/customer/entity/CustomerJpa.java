@@ -108,6 +108,20 @@ public class CustomerJpa {
 		product.setCustomer(this);
 		this.products.add(product);
 	}
+
+	public UUID getCustomerId() {
+		return customerId;
+	}
+
+	public void setCustomerId(UUID customerId) {
+		this.customerId = customerId;
+	}
+
+	public void setProducts(List<ProductJpa> products) {
+		this.products = products;
+	}
+	
+	
 	
 	
 	 

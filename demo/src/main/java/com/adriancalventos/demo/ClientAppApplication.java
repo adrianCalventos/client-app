@@ -1,5 +1,6 @@
 package com.adriancalventos.demo;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,16 +36,18 @@ public class ClientAppApplication {
         	
         	List<CustomerJpa> cusList=new ArrayList<CustomerJpa>();
         	CustomerJpa cus=new  CustomerJpa("1111111111A", "123344567", "pepe@mail.com", "pepe");
-        	cus.addProduct(new ProductJpa("linea fixe", "servei", "911111111"));
-        	cus.addProduct(new ProductJpa("fibra", "servei", null));
+        	cus.addProduct(new ProductJpa("linea fixe", "servei", "911111111",  new SimpleDateFormat("yyyy-MM-dd").parse("2016-06-01")));
+        	cus.addProduct(new ProductJpa("fibra", "servei", null,  new SimpleDateFormat("yyyy-MM-dd").parse("2020-11-01")));
+        	
+
         	cusList.add(cus);
         	
         	cus=new  CustomerJpa("1111111112A", "123344568", "Joseph@mail.com", "Joseph");
-        	cus.addProduct(new ProductJpa("linea fixe", "servei", "911111111"));
-        	cus.addProduct(new ProductJpa("20gb", "producte", null));
-        	cus.addProduct(new ProductJpa("roaming", "producte", null ));
-        	cus.addProduct(new ProductJpa("roaming", "producte", null ));
-        	cus.addProduct(new ProductJpa("movil", "servei", null));
+        	cus.addProduct(new ProductJpa("linea fixe", "servei", "911111111",  new SimpleDateFormat("yyyy-MM-dd").parse("2019-01-01")));
+        	cus.addProduct(new ProductJpa("20gb", "producte", null,  new SimpleDateFormat("yyyy-MM-dd").parse("2017-11-15")));
+        	cus.addProduct(new ProductJpa("roaming", "producte", null,  new SimpleDateFormat("yyyy-MM-dd").parse("2017-11-15") ));
+        	cus.addProduct(new ProductJpa("roaming", "producte", null,  new SimpleDateFormat("yyyy-MM-dd").parse("2016-11-15") ));
+        	cus.addProduct(new ProductJpa("movil", "servei", null,  new SimpleDateFormat("yyyy-MM-dd").parse("2020-02-22")));
 
         	cusList.add(cus);
         	cus=new  CustomerJpa("1111111113A", "123344569", "aaia@mail.com", "Laia");

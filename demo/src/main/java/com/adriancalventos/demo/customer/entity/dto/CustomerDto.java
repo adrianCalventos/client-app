@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.UUID;
 
 import com.adriancalventos.demo.product.entity.ProductJpa;
+import com.adriancalventos.demo.product.entity.dto.ProductDto;
 
 
 
@@ -20,12 +21,12 @@ public class CustomerDto {
 	 	 
 	 private String givenName;
 	 
-	 List<ProductJpa> products;
+	 List<ProductDto> products;
 	 
 	 public CustomerDto() {}
 	 
 
-	public CustomerDto(UUID id, String nif, String docNum, String email, String givenName, List<ProductJpa> products) {
+	public CustomerDto(UUID id, String nif, String docNum, String email, String givenName, List<ProductDto> products) {
 		this.id = id;
 		this.nif = nif;
 		this.docNum = docNum;
@@ -75,12 +76,12 @@ public class CustomerDto {
 	}
 
 
-	public List<ProductJpa> getProducts() {
+	public List<ProductDto> getProducts() {
 		return products;
 	}
 
 
-	public void setProducts(List<ProductJpa> products) {
+	public void setProducts(List<ProductDto> products) {
 		this.products = products;
 	}
 	 
